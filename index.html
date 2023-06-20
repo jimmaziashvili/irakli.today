@@ -26,13 +26,6 @@
         padding-top: 50px;
         justify-content: center;
       }
-      #img {
-        max-width: 800px;
-        width: 800px;
-
-        height: 616px;
-        background-image: url("https://lh3.googleusercontent.com/OPr1TFAZRusRyi2Q0iG9vabs3WLu74bnLCeI-zuJp8XQIIqmaihgYSrBNfsTeJv1yq0dmIyI2lz7ZFGPA6byoobbPKgGGJhf-Xfw-A=w1024");
-      }
       h1 {
         font-family: "BPG Banner Caps", sans-serif;
         color: white;
@@ -223,6 +216,20 @@
             -1.8em -1.8em 0 0em #ffffff;
         }
       }
+
+      #button {
+        text-align: center;
+        color: black;
+        background-color: white;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      #button:hover {
+        opacity: 0.7;
+      }
     </style>
   </head>
   <body>
@@ -250,23 +257,52 @@
     <div class="loading">
       <div class="loader" id="loader"></div>
       <div class="" style="display: none; color: red" id="status">
-        <h1 id="facts">დღესაც </h1>
-        <p style="text-align: center; color: white; font-style: bold; cursor: pointer;" onclick="location.reload()">კიდევ მითხარი რამე...</p>
+        <h1 style="text-align: center" id="facts">დღესაც</h1>
+        <p id="button" onclick="location.reload()">
+          >>> კიდევ მითხარი რამე... <<<
+        </p>
       </div>
     </div>
-    <div id="img"></div>
-    <h1 style="display: none" id="secondDick">კობახიძეც.</h1>
-    <h1 style="font-size: 12px">მადლობა ბტნ. ბიძინას.</h1>
+    <img id="img"></img>
+
+    <h1 style="font-size: 12px">მდლბ. ბტნ. ბიძინას.</h1>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E46D4J5P3V"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag("js", new Date())
+
+      gtag("config", "G-E46D4J5P3V")
+    </script>
   </body>
   <script>
     const randomWords = [
       "გაოგნებულია",
-      "ყველაფერს აკეთებს ომისგან თავის ასაცილებლად",
-      "უფრთხილდება ჩვენი ქვეყნის სტაბილურობას",
+      "ყველაფერს აკეთებს ომისგან თავის ასაცილებლად 💩",
+      "უფრთხილდება ჩვენი ქვეყნის სტაბილურობას ❤️",
       "ვერ იღებს დამოუკიდებელ გადაწყვეტილებებს",
       "ატარებს დაუდეკლარირებელ 30,000$-იან როლექსს",
-      "მადლობას უხდის ბიძინა ივანიშვილს",
+      "მადლობას უხდის ბიძინა ივანიშვილს ❤️",
       "ფიქრობს რომ უკრაინა ფეხზე ვეღარ დადგება",
+      "ეშინია LGBT პროპაგანდამ გეი არ გახადოს 🏳️‍🌈",
+      "ფეხებზე კიდია შრომითი უფლებები",
+      "ქამარშემოჭერილი დადის",
+      "მხარს უჭერს რუსეთს 🇷🇺",
+      "ატერორებს ახალგაზრდებს",
+      "... მოიცა ეგ რას აკეთებს?",
+    ]
+
+    const randomUrls = [
+      "https://rachel.on.ge/2021/02/18/qvela_bavshvs_plansheti.gif",
+      "https://joey.on.ge/2021/02/19/shekhvedrebi_mtseralta_sakhlshi_-_irakli_gharibashvili.gif",
+      "https://phoebe.on.ge/2021/02/18/irakli_gharibashvili.gif",
+      "https://monica.on.ge/2021/02/18/aloirakli_var_gharibashvili_-_premieri_stikiit_dazaralebuls_teleponze_gaesaubr.gif"
     ]
 
     function getRandomWord(array) {
@@ -278,14 +314,9 @@
       document.getElementById("loader").hidden = true
       document.getElementById("status").style.display = "block"
       document.getElementById("img").style.height = 800
-      document.getElementById("facts").innerText = "დღესაც " + getRandomWord(randomWords)
-
-      const contentText = document.getElementById("facts").innerText
-      console.log(contentText.split(" "))
-
-      setTimeout(() => {
-        document.getElementById("secondDick").style.display = "block"
-      }, 0)
+      document.getElementById("facts").innerText =
+        "დღესაც " + getRandomWord(randomWords)
+      document.getElementById("img").src = getRandomWord(randomUrls)
     }, 0)
   </script>
 </html>
